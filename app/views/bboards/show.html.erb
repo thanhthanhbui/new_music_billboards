@@ -2,7 +2,12 @@
 <h2 class="ui header">Genre: <%= @bboard.genre %></h2>
 <hr />
 
-
+<div class="ui container">
+    <% @bboard.songs.each do |song| %>
+    <%= song.title %>
+    <% end %>
+</div>
+<br />
 <div class="ui container">
   <div class="extra content">
     <div class="ui button">
