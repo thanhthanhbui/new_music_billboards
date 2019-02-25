@@ -10,6 +10,7 @@ class SongsController < ApplicationController
   end
 
   def new
+    @bboards= Bboard.all
     @song = @artist.songs.new
   end
 
@@ -24,6 +25,7 @@ class SongsController < ApplicationController
   end
 
   def edit
+    @bboards = Bboard.all
   end
 
   def update

@@ -11,6 +11,7 @@
     </div>
   </div>  
   <div class="extra content">
+    <%= link_to 'Add to Billboard', new_bboard_song_path(@song) %> |
     <%= link_to 'Edit Song', edit_artist_song_path(@artist, @song) %> |
     <%= link_to 'Back to Songs', artist_songs_path(@artist) %>
   </div>
