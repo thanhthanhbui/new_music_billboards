@@ -1,0 +1,27 @@
+
+<div class="ui card">
+  <div class="content">
+    <p class="header">
+      <%= @song.title %>
+    </p>
+    <div class="description">
+      By: <%= @artist.full_name %>
+      <br />
+      Album: <%= @song.album %>
+    </div>
+  </div>  
+  <div class="extra content">
+    <%= link_to 'Edit Song', edit_artist_song_path(@artist, @song) %> |
+    <%= link_to 'Back to Songs', artist_songs_path(@artist) %>
+  </div>
+</div>
+<br />
+<br />
+<div class="ui labeled button" tabindex="0">
+  <div class="ui button">
+    <i class="heart icon"></i> Like
+  </div>
+  <a class="ui basic label">
+    2,048
+  </a>
+</div>

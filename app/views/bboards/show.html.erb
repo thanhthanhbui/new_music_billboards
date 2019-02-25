@@ -1,0 +1,18 @@
+<h1 class="ui header"><%= @bboard.title %></h1>
+<h2 class="ui header">Genre: <%= @bboard.genre %></h2>
+<hr />
+
+<div class="ui container">
+<%= link_to 'Add a new song', new_bboard_song_path(@bboard) %>
+</div>
+<br />
+<div class="ui container">
+  <div class="extra content">
+    <div class="ui button">
+        <%= link_to 'Edit Billboard', edit_bboard_path(@bboard) %>
+    </div>
+    <div class="ui button">
+      <%= link_to 'Back to Billboards', bboards_path %>
+    </div>
+  </div>
+</div>

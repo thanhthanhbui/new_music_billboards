@@ -1,0 +1,36 @@
+<h1 class="ui header">Billboard Charts</h1>
+<div class="ui vertical text menu">
+  <div class="header item">View By</div>
+    <a class="active item">
+      <%= link_to 'By Artists', artists_path %>
+    </a>
+  </div>
+</div>
+<div class="ui divider"></div>
+
+<div class="ui container">
+  <%= link_to 'Create a new Billboard', new_bboard_path %>
+  <br />
+  <br />
+  <div class="ui grid">
+    <% @bboards.each do |bboard| %>
+      <div class="sixteen wide mobile eight wide tablet four wide computer column">
+        <div class="ui card">
+          <div class="content">
+            <%= link_to bboard.title, bboard, class: "header" %>
+          </div>
+          <div class="extra content">
+            <div class="ui two buttons">
+              <div class="ui basic green button">
+                <%= link_to 'Edit', edit_bboard_path(bboard) %>
+              </div>
+              <div class="ui basic red button">
+                <%= link_to 'Delete', bboard, method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

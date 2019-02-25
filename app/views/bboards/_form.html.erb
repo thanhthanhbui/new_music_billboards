@@ -1,0 +1,11 @@
+<%= form_with(model: @bboard, local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title, required: true, placeholder: "Title", autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :genre %>
+    <%= f.text_field :genre, required: true, placeholder: "Genre" %>
+  </div>
+  <%= f.submit "Submit", class: "ui blue button" %>
+<% end %>

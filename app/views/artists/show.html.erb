@@ -1,0 +1,18 @@
+<h1 class="ui header"><%= @artist.full_name %></h1>
+<div class="ui card">
+  <div class="image">
+    <img src="https://robohash.org/<%= @artist.avatar %>?set=set4" />
+  </div>
+  <div class="content">
+    <%= link_to 'View Songs', artist_songs_path(@artist) %>
+  </div>
+</div>
+
+<div class="extra content">
+  <div class="ui button">
+      <%= link_to 'Edit Artist', edit_artist_path %>
+  </div>
+  <div class="ui button">
+    <%= link_to 'Back to Artists', artists_path %>
+  </div>
+</div>

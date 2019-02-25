@@ -1,0 +1,27 @@
+<h1 class="ui header">Songs</h1>
+<%= link_to 'Add a new Song', new_artist_song_path(@artist) %>
+<br />
+<%= link_to 'Back', artist_path(@artist) %>
+<div class="ui divider"></div>
+
+<div class="ui grid">
+    <% @songs.each do |song| %>
+      <div class="sixteen wide mobile eight wide tablet four wide computer column">
+        <div class="ui card">
+          <div class="content">
+            <%= link_to "#{song.title}", [@artist, song], class: "header" %>
+          </div>
+          <div class="extra content">
+            <div class="ui two buttons">
+              <div class="ui basic green button">
+                <%= link_to 'Edit', edit_artist_song_path(@artist, song) %>
+              </div>  
+              <div class="ui basic red button">
+                <%= link_to 'Delete', [@artist, song], method: :delete, data: { confirm: "Are you sure?" } %>
+              </div>            
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
