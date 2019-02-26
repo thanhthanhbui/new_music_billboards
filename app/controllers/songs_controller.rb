@@ -1,5 +1,6 @@
 class SongsController < ApplicationController
   before_action :set_artist
+  before_action :set_bboard
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -10,7 +11,6 @@ class SongsController < ApplicationController
   end
 
   def new
-    @bboards= Bboard.all
     @song = @artist.songs.new
   end
 
@@ -18,19 +18,18 @@ class SongsController < ApplicationController
     @song = @artist.songs.new(song_params)
     
     if @song.save
-      redirect_to artist_songs_path(@artist)
+      redirect_to bboards_path
     else
       render :new
     end
   end
 
   def edit
-    @bboards = Bboard.all
   end
 
   def update
     if @song.update(song_params)
-      redirect_to artist_song_path(@artist)
+      redirect_to bboards_path
     else
       render :edit
     end
@@ -42,6 +41,9 @@ class SongsController < ApplicationController
   end
 
   private
+    def set_bboard
+      @bboards = Bboard.all
+    end
 
     def set_artist
       @artist = Artist.find(params[:artist_id])
@@ -52,6 +54,6 @@ class SongsController < ApplicationController
     end
 
     def song_params
-      params.require(:song).permit(:title, :album)
+      params.require(:song).permit(:title, :album, :bboard_id)
     end
 end

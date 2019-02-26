@@ -15,4 +15,7 @@
   <div class="ui button">
     <%= link_to 'Back to Artists', artists_path %>
   </div>
+  <div class="ui button">
+    <%= link_to 'Delete', @artist, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
 </div>

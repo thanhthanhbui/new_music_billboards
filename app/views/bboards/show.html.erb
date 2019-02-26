@@ -3,12 +3,12 @@
 <hr />
 
 <div class="ui container">
+  <div class="content">
     <% @bboard.songs.each do |song| %>
     <%= song.title %>
     <% end %>
-</div>
-<br />
-<div class="ui container">
+  </div>
+  <br />
   <div class="extra content">
     <div class="ui button">
         <%= link_to 'Edit Billboard', edit_bboard_path(@bboard) %>

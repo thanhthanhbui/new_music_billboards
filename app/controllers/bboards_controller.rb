@@ -6,6 +6,7 @@ class BboardsController < ApplicationController
   end
 
   def show
+    @songs = @bboard.songs
   end
 
   def new
